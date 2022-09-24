@@ -1,3 +1,5 @@
+https://github.com/dhruva1108/hadoop_mapreduce/archive/refs/tags/0.1.tar.gz
+
 from distutils.core import setup
 setup(
   name = 'hadoop_mapreduce',         # How you named your package folder (MyLib)

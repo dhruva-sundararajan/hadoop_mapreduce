@@ -1,0 +1,10 @@
+LICENSE.txt
+setup.cfg
+setup.py
+hadoop_mapreduce/__init__.py
+hadoop_mapreduce/maximum.py
+hadoop_mapreduce/minimum.py
+hadoop_mapreduce.egg-info/PKG-INFO
+hadoop_mapreduce.egg-info/SOURCES.txt
+hadoop_mapreduce.egg-info/dependency_links.txt
+hadoop_mapreduce.egg-info/top_level.txt

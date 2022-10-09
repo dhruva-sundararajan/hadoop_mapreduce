@@ -98,15 +98,10 @@ Hello 8.0
 Hola 20.0
 Hi 12.0
 ```
-
-## MapReduce_Minimum
-### Importing
-```
-from hadoop_mapreduce import MapReduce_Minimum
-```
+## Mapreduce_Minimum
 ### Calling the class
 ```
-data = MapReduce_Minimum(<path to text file>, <path to text meta file>, <path to output file>)
+data = MapReduce_WordCount(<path to text file>, <path to output file>)
 ```
 `text file` should contain records of the data. Example:
 ```
@@ -183,9 +178,90 @@ Output:
 ```
 'File <path to output file> written successfully'
 ```
-`output file` has key and highest value of the key. Example:
+`output file` has key and lowesr value of the key. Example:
 ```
 Hello 1.0
 Hola 1.0
 Hi 1.0
+```
+## MapReduce_WordCount
+### Importing
+```
+from hadoop_mapreduce import MapReduce_Minimum
+```
+### Calling the class
+```
+data = MapReduce_Minimum(<path to text file>, <path to text meta file>, <path to output file>)
+```
+`text file` should contain records of the data. Example:
+```
+hello wassup. how are you? hello man.
+```
+`output file` will be created at the end of mapreduce implementation
+### Record Reader
+Code:
+```
+data.record_reader()
+```
+Output:
+```
+['hello', 'wassup', 'how', 'are', 'you', 'hello', 'man']
+```
+### Mapper
+Code:
+```
+data.mapper()
+```
+Output:
+```
+[{'hello': 1},
+ {'wassup': 1},
+ {'how': 1},
+ {'are': 1},
+ {'you': 1},
+ {'hello': 1},
+ {'man': 1}]
+```
+### Sorter & Shuffler
+Code:
+```
+data.sorter()
+```
+Output:
+```
+[{'are': 1},
+ {'hello': 1},
+ {'hello': 1},
+ {'how': 1},
+ {'man': 1},
+ {'wassup': 1},
+ {'you': 1}]
+```
+### Reducer
+Code:
+```
+data.reducer()
+```
+Output:
+```
+[('are', 1), ('hello', 2), ('how', 1), ('man', 1), ('wassup', 1), ('you', 1)]
+
+```
+#### Record Writer
+Code:
+```
+data.record_writer()
+```
+Output:
+```
+'File <path to output file> written successfully'
+```
+`output file` word and number of appearences. Example:
+```
+are 1
+hello 2
+how 1
+man 1
+wassup 1
+you 1
 ```

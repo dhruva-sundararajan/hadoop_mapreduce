@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: hadoop-mapreduce
-Version: 0.3
+Version: 0.4
 Summary: Implementation of Hadoop Mapreduce on text files
 Home-page: https://github.com/dhruva1108/hadoop_mapreduce
 Download-URL: https://github.com/dhruva1108/hadoop_mapreduce/archive/refs/tags/0.3.tar.gz
